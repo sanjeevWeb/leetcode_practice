@@ -16,9 +16,12 @@ class Solution{
         string temp = "";
         for(int i=0;i<n;i++){
             int count = 0;
-            for(char c : names[i]){
+            for(int j=0;j<names[i].size();j++){
                 count++;
             }
+            // for(char c : names[i]){
+            //     count++;
+            // }
             if(count > maxi){
                 maxi = count;
                 temp = names[i];
