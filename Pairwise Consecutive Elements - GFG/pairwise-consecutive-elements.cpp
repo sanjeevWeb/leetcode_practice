@@ -49,7 +49,7 @@ bool pairWiseConsecutive(stack<int> s)
             s.pop();
             int num2 = s.top();
             s.pop();
-            if(abs(num1 - num2 != 1)){
+            if(abs(num1 - num2) != 1){
                 return false;
             }
         }
@@ -61,7 +61,7 @@ bool pairWiseConsecutive(stack<int> s)
             s.pop();
             int num2 = s.top();
             s.pop();
-            if(abs(num1 - num2 != 1)){
+            if(abs(num1 - num2) != 1){
                 return false;
             }
         }
