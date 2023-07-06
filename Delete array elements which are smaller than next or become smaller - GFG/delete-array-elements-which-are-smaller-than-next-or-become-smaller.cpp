@@ -35,8 +35,8 @@ vector<int> deleteElement(int arr[],int n,int k)
     // complete the function
     stack<int> st;
     int cnt = 0;
-    st.push(arr[0]);
-    for(int i=1;i<n;i++){
+    // st.push(arr[0]);
+    for(int i=0;i<n;i++){
         while(!st.empty() && cnt < k && st.top() < arr[i]){
             st.pop();
             cnt++;
