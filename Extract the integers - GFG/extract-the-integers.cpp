@@ -33,9 +33,9 @@ vector<string> extractIntegerWords(string s)
     for(int i=0;i<s.size();i++)
     {
         string S="";
-        if(s[i]>=48 && s[i]<=57)
+        if(s[i]>='0' && s[i]<='9')
         {
-        while(s[i]>=48 && s[i]<=57)
+        while(s[i]>='0' && s[i]<='9')
         {
             S=S+s[i];
             i++;
