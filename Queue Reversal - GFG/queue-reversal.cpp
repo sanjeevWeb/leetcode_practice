@@ -14,17 +14,19 @@ class Solution
     queue<int> rev(queue<int> q)
     {
         // add code here.
-        queue<int> ans;
         stack<int> st;
+        
         while(!q.empty()){
-            st.push(q.front());
+            int val = q.front();
+            st.push(val);
             q.pop();
         }
+        
         while(!st.empty()){
-            ans.push(st.top());
+            q.push(st.top());
             st.pop();
         }
-        return ans;
+        return q;
     }
 };
 
