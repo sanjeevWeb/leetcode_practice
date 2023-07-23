@@ -22,10 +22,13 @@ class Solution{
         // }
         // int ans = total-sum;
         // return ans;
-        int m = array.size() + 1;
- 
+        // int m = array.size() + 1;
+    // n = n+1;
     // get a sum of integers between 1 and `n+1`
-    int total = m*(m + 1)/2;
+    
+    
+    // int total = m*(m + 1)/2;
+    int total = n*(n + 1)/2;
  
     // get an actual sum of integers in the array
     int sum = 0;
