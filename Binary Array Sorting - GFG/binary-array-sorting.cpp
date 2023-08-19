@@ -19,6 +19,16 @@ class Solution{
         * No need to print the array
         * ************/
         
+        // for(int i=0;i<N;i++){
+        //     for(int j=0;j<N;j++){
+        //         if(A[j] > A[i]){
+        //             int temp = A[j];
+        //             A[j] = A[i];
+        //             A[i] = temp;
+        //         }
+        //     }
+        // }
+        
         sort(A,A+N);
     }
 };
