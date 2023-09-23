@@ -12,22 +12,24 @@ class Solution{
     int equilibriumPoint(long long a[], int n) {
     
         // Your code here
-        
-        long long int sum = 0;
-        long long int leftsum = 0;
-        for(int i=0;i<n;i++){
+        int sum = 0; // initialize sum of whole array
+        int leftsum = 0; // initialize leftsum
+     
+        /* Find sum of the whole array */
+        for (int i = 0; i < n; ++i)
             sum += a[i];
-        }
-        
-        for(int i=0;i<n;i++){
-            sum -= a[i];
-            if(sum == leftsum){
+     
+        for (int i = 0; i < n; ++i)
+        {
+            sum -= a[i]; // sum is now right sum for index i
+     
+            if (leftsum == sum)
                 return i+1;
-            }
+     
             leftsum += a[i];
         }
-       
         return -1;
+ 
     }
 
 };
