@@ -7,20 +7,24 @@ class Solution{
   public:
     vector<int> duplicates(int arr[], int n) {
         // code here
-        unordered_map<int,int>umap;
+        vector<int> vec;
         
+        unordered_map<int,int>umap;
         for(int i=0;i<n;i++){
             umap[arr[i]]++;
         }
-        vector<int>vec;
-        for(auto it : umap){
-            if(it.second > 1){
-                vec.push_back(it.first);
+        
+        for(auto itr : umap){
+            if(itr.second > 1){
+                vec.push_back(itr.first);
             }
         }
         
-        if(vec.size() == 0) vec.push_back(-1);
-        sort(vec.begin(),vec.end());
+        if(vec.size()){
+            sort(vec.begin(),vec.end());
+            return vec;
+        }
+        vec.push_back(-1);
         return vec;
     }
 };
