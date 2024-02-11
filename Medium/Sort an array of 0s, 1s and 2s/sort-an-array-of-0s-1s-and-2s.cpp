@@ -10,11 +10,30 @@ class Solution
     public:
     void sort012(int a[], int n)
     {
-        // code here 
-        sort(a,a+n);
-    }
+//   
+        int low=0,mid=0,high=n-1;
+        while(mid<=high){
+            if(a[mid]==2){
+                int temp=a[mid];
+                a[mid]=a[high];
+                a[high]=temp;
+                high--;
+            }
+            else if(a[mid]==0){
+                int temp=a[mid];
+                a[mid]=a[low];
+                a[low]=temp;
+                low++;
+                mid++;
+            }
+            else mid++;
+        }
+        
+        
     
+    }
 };
+
 
 //{ Driver Code Starts.
 int main() {
