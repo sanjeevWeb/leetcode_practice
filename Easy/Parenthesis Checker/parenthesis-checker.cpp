@@ -12,23 +12,33 @@ class Solution
     bool ispar(string x)
     {
         // Your code here
-        stack<char>st;
-        for(int i=0;i<x.size();i++){
+        int n = x.size();
+        int i = 0;
+        stack<int> st;
+        while(i<n){
             if(st.empty()){
                 st.push(x[i]);
             }
-            else if(x[i]==')' and st.top()=='(' or x[i]=='}' and st.top()=='{' or x[i]==']' and st.top()=='['){
-                st.pop();
-            }
             else{
-                st.push(x[i]);
+                if((st.top() == '{' && x[i] == '}') ||
+                  (st.top() == '[' && x[i] == ']') ||
+                  (st.top() == '(' && x[i] == ')')){
+                      st.pop();
+                  }
+                else if(st.top() != x[i] || st.top() == x[i]){
+                  st.push(x[i]);
+                }
             }
+            i++;
         }
-        if(st.empty()) return true;
+        if(st.empty()){
+            return true;
+        }
         return false;
     }
 
 };
+
 
 //{ Driver Code Starts.
 
