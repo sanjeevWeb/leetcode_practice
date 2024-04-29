@@ -13,29 +13,19 @@ using namespace std;
 class Solution{
   public:
     int missingNumber(vector<int>& array, int n) {
-        // Your code goes here
-        // n++;
-        // int total = n*(n+1)/2;
-        // int sum=0;
-        // for(int i=0;i<n;i++){
-        //     sum += array[i];
-        // }
-        // int ans = total-sum;
-        // return ans;
-        int m = array.size() + 1;
- 
-    // get a sum of integers between 1 and `n+1`
-    int total = m*(m + 1)/2;
- 
-    // get an actual sum of integers in the array
-    int sum = 0;
-    for (int i = 0; i < array.size(); i++) {
-        sum += array[i];
+        
+   
+    int x = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        x = x ^ i;
     }
- 
-    // the missing number is the difference between the expected sum
-    // and the actual sum
-    return total - sum;
+    for (int i = 0; i < n - 1; i++)
+    {
+        x ^= array[i];
+    }
+
+    return x;
     }
 };
 
