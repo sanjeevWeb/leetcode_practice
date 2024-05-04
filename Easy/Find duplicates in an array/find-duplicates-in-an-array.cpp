@@ -6,24 +6,21 @@ using namespace std;
 class Solution{
   public:
     vector<int> duplicates(long long arr[], int n) {
-        vector<int>ans;
-        unordered_map<long long,int>mp;
-        for(int i=0;i<n;i++){
-            mp[arr[i]]++;
-        }
-        bool check=false;
-        for(auto &i : mp){
-            if(i.second > 1){
-                ans.push_back(i.first);
-                check = true;
-            }
-        }
-        sort(ans.begin(),ans.end());
-        if(check){
-            return ans;
-        }
-        return {-1};
+        // code here
+        vector<int> dup;
+        map<int, int> mp;
         
+        for (int i = 0; i < n; i++)
+            mp[arr[i]]++;
+        
+        for (auto x : mp) {
+            if (x.second > 1)
+                dup.emplace_back(x.first);
+        }
+        
+        if (dup.size() < 1) dup.push_back(-1);
+        
+        return dup;
     }
 };
 
