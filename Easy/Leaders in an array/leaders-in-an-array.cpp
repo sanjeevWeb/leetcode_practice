@@ -13,22 +13,23 @@ class Solution{
     public:
     vector<int> leaders(int a[], int n){
         // Code here
-        vector<int>output;
+        vector<int> ans;
         for(int i=0;i<n;i++){
             bool flag = false;
             for(int j=i+1;j<n;j++){
-                if(a[i] < a[j]){
+                if(a[j] > a[i]){
                     flag = true;
                     break;
                 }
             }
             if(flag == false){
-                output.push_back(a[i]);
+                ans.push_back(a[i]);
             }
         }
-        return output;
+        return ans;
     }
 };
+
 
 //{ Driver Code Starts.
 
