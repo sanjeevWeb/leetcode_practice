@@ -12,19 +12,22 @@ class Solution
     char nonrepeatingCharacter(string S)
     {
        //Your code here
-       unordered_map<char,int>umap;
+       int alpha[26] = {0};
+       
        for(char ch : S){
-           umap[ch]++;
+           alpha[ch - 'a'] += 1;
        }
-       for(char ch : S){
-           if(umap[ch] == 1){
-               return ch;
+       
+       for(int i=0;i<S.length();i++){
+           if(alpha[S[i] - 'a'] ==1){
+               return S[i];
            }
        }
        return '$';
     }
 
 };
+
 
 //{ Driver Code Starts.
 
